@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url("bg.png");
+        background-size: cover;
+    }
+
+    .container {
+        margin-right: 365px;
+        margin-top: 120px;
+        background-color: white;
+        float: right;
+        max-width: 400px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    h2 {
+        text-align: center;
+        font-family: serif;
+        margin: 20px;
+        font-size: 30px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <center><img src="auau.png" height="200" width="200"></center>
+    <h2>Form Validation</h2>
+    <form id="myForm">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="grade">Grade</label>
+        <input type="number" id="grade" name="grade" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var grade = parseInt(document.getElementById('grade').value);
+
+    if (password !== 'asd') {
+        alert('Incorrect password');
+        return;
+    }
+
+    var resultMessage;
+    if (grade < 50) {
+        resultMessage = 'Failed';
+        alert('Result: Failed');
+    } else {
+        resultMessage = 'Passed';
+        alert('Result: Passed');
+    }
+});
+</script>
+
+</body>
+</html>
